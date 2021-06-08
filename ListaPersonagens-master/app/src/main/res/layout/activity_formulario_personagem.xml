@@ -20,16 +20,16 @@
         android:inputType="textPersonName"
         android:hint="Nome" />
 
-    <EditText
-        android:id="@+id/edittext_altura"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_margin="10dp"
-        android:inputType="numberDecimal"
-        android:hint="Altura" />
+        <EditText
+            android:id="@+id/edittext_altura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Altura"
+            android:inputType="numberDecimal" />
 
-    <EditText
+        <EditText
         android:id="@+id/edittext_nascimento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,6 +47,43 @@
         android:text="SALVAR"
         android:visibility="gone"
         />
-  </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_margin="10dp"
+            android:inputType="textPersonName"
+            android:hint="Genero" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_margin="10dp"
+            android:inputType="phone"
+            android:hint="Número de telefone"/>
+
+        <EditText
+            android:id="@+id/editTextRG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_margin="10dp"
+            android:inputType="textPostalAddress"
+            android:hint="RG"/>
+
+        <EditText
+            android:id="@+id/editTextCEP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_margin="10dp"
+            android:inputType="textPostalAddress"
+            android:hint="CEP"/>
+
+    </LinearLayout>
 
 </ScrollView>

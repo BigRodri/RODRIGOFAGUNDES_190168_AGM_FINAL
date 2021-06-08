@@ -27,6 +27,11 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
     private EditText campoNome;
     private EditText campoAltura;
     private EditText campoNascimento;
+    private EditText campoGenero;
+    private EditText campoTelefone;
+    private EditText campoRG;
+    private EditText campoCep;
+
     //Pegar as informações da classe PersonageDAO
     private final PersonagemDAO dao = new PersonagemDAO();
     //Pegar as informações da classe Personagem
@@ -74,6 +79,11 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
         campoNome.setText(personagem.getNome());
         campoAltura.setText(personagem.getAltura());
         campoNascimento.setText(personagem.getNascimento());
+        campoGenero.setText(personagem.getGenero());
+        campoTelefone.setText(personagem.getTelefone());
+        campoRG.setText(personagem.getRg());
+        campoCep.setText(personagem.getCep());
+
     }
     //Quando clicar no botão ele salva o personagem
     private void configuraBotaoSalvar() {
@@ -102,6 +112,12 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
         campoNome = findViewById(R.id.edittext_name);
         campoAltura = findViewById(R.id.edittext_altura);
         campoNascimento = findViewById(R.id.edittext_nascimento);
+        campoGenero = findViewById(R.id.editTextGenero);
+        campoTelefone = findViewById(R.id.editTextPhone);
+        campoRG = findViewById(R.id.editTextRG);
+        campoCep = findViewById(R.id.editTextCEP);
+
+
 
         //Cria uma mascara para separar as informações de acordo com o campo Altura, o separando por virgula
         SimpleMaskFormatter smfAltura = new SimpleMaskFormatter("N,NN");
@@ -112,16 +128,36 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
         SimpleMaskFormatter smfNascimento = new SimpleMaskFormatter("NN/NN/NNNN");
         MaskTextWatcher mtwNascimento = new MaskTextWatcher(campoNascimento, smfNascimento);
         campoNascimento.addTextChangedListener(mtwNascimento);
+
+        SimpleMaskFormatter smfTelefone = new SimpleMaskFormatter("(NN) NNNNN-NNNN)");
+        MaskTextWatcher mtwTelefone = new MaskTextWatcher(campoTelefone, smfTelefone);
+        campoTelefone.addTextChangedListener(mtwTelefone);
+
+        SimpleMaskFormatter smfRG = new SimpleMaskFormatter("NNN.NNN.NNN-NN");
+        MaskTextWatcher mtwRG = new MaskTextWatcher(campoRG, smfRG);
+        campoRG.addTextChangedListener(mtwRG);
+
+        SimpleMaskFormatter smfCep = new SimpleMaskFormatter("NNNNN-NNN");
+        MaskTextWatcher mtwCep = new MaskTextWatcher(campoCep, smfCep);
+        campoCep.addTextChangedListener(mtwCep);
     }
     //Metodo que preenche os campos(variaveis) dos personagens
     private void preenchePersonagem(){
         String nome = campoNome.getText().toString();
         String altura = campoAltura.getText().toString();
         String nascimento = campoNascimento.getText().toString();
+        String genero = campoGenero.getText().toString();
+        String telefone = campoTelefone.getText().toString();
+        String rg = campoRG.getText().toString();
+        String cep = campoCep.getText().toString();
 
         personagem.setNome(nome);
         personagem.setAltura(altura);
         personagem.setNascimento(nascimento);
+        personagem.setGenero(genero);
+        personagem.setTelefone(telefone);
+        personagem.setRg(rg);
+        personagem.setCep(cep);
 
     }
 }

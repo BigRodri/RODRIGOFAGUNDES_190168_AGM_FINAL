@@ -10,13 +10,22 @@ public class Personagem implements Serializable {
     private String nome;
     private String altura;
     private String nascimento;
+    private String genero;
+    private String telefone;
+    private String rg;
+    private String cep;
+
     private int id = 0;
 
-    public Personagem(String nome, String altura, String nascimento) {
+    public Personagem(String nome, String altura, String nascimento, String genero, String telefone, String rg, String cep) {
         /*Setando as variáveis carregadas acima*/
         this.nome = nome;
         this.altura = altura;
         this.nascimento = nascimento;
+        this.genero = genero;
+        this.telefone = telefone;
+        this.rg = rg;
+        this.cep = cep;
     }
 
     //Serve para que não ocorra erro quando todos os campo estiverem vazios
@@ -50,6 +59,22 @@ public class Personagem implements Serializable {
     public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
+
+    public String getGenero() { return genero; }
+
+    public void setGenero(String genero) { this.genero = genero; }
+
+    public String getTelefone() { return telefone; }
+
+    public void setTelefone(String telefone) { this.telefone = telefone; }
+
+    public String getRg() { return rg; }
+
+    public void setRg(String rg) { this.rg = rg; }
+
+    public String getCep() { return cep; }
+
+    public void setCep(String cep) { this.cep = cep; }
 
     //Pega e grava o ID
     public void setId(int id) {
