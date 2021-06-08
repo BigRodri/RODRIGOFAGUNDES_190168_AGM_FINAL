@@ -124,19 +124,22 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
         MaskTextWatcher mtwAltura = new MaskTextWatcher(campoAltura, smfAltura);
         campoAltura.addTextChangedListener(mtwAltura);
 
-        ////Cria uma mascara para separar as informações de acordo com o campo Altura, o separando-as por barras
+        //Cria uma mascara para separar as informações de acordo com o campo Nascimento, o separando-as por barras
         SimpleMaskFormatter smfNascimento = new SimpleMaskFormatter("NN/NN/NNNN");
         MaskTextWatcher mtwNascimento = new MaskTextWatcher(campoNascimento, smfNascimento);
         campoNascimento.addTextChangedListener(mtwNascimento);
 
+        //Cria uma mascara para separar as informações de acordo com o campo Teleone, o separando-as Parenteses e traço
         SimpleMaskFormatter smfTelefone = new SimpleMaskFormatter("(NN) NNNNN-NNNN)");
         MaskTextWatcher mtwTelefone = new MaskTextWatcher(campoTelefone, smfTelefone);
         campoTelefone.addTextChangedListener(mtwTelefone);
 
+        //Cria uma mascara para separar as informações de acordo com o campo RG, o separando-as por pontos e traço
         SimpleMaskFormatter smfRG = new SimpleMaskFormatter("NNN.NNN.NNN-NN");
         MaskTextWatcher mtwRG = new MaskTextWatcher(campoRG, smfRG);
         campoRG.addTextChangedListener(mtwRG);
 
+        //Cria uma mascara para separar as informações de acordo com o campo CEP, o separando-as por um traço
         SimpleMaskFormatter smfCep = new SimpleMaskFormatter("NNNNN-NNN");
         MaskTextWatcher mtwCep = new MaskTextWatcher(campoCep, smfCep);
         campoCep.addTextChangedListener(mtwCep);
